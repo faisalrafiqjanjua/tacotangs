@@ -1,75 +1,87 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taco Tang's - Coming Soon</title>
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        }
-        body {
-            background-color: #312044; /* Brand Dark Purple */
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            background: #3B225B; /* Brand Card Purple */
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 500px;
-            width: 100%;
-            border: 2px solid #FDD37E; /* Brand Yellow */
-        }
-        .logo { 
-            max-width: 100%; 
-            height: auto; 
-            margin-bottom: 20px; 
-            border-radius: 12px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        h1 { 
-            color: #FDD37E; 
-            font-size: 2.2rem; 
-            margin-bottom: 10px; 
-        }
-        p { 
-            color: #D0A1FA; 
-            font-size: 1.1rem; 
-            margin-bottom: 25px; 
-            line-height: 1.5; 
-        }
-        .badge {
-            background: #FDD37E; /* Brand Yellow */
-            color: #2A2929; /* Brand Charcoal Text */
-            padding: 12px 24px;
-            font-weight: bold;
-            border-radius: 50px;
-            display: inline-block;
-            font-size: 1.2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taco Tang's - Coming Soon</title>
+<meta name="description" content="Taco Tang's is coming soon. Tangy Twist In Every Bite.">
+<meta property="og:title" content="Taco Tang's - Coming Soon">
+<meta property="og:description" content="Tangy Twist In Every Bite">
+<style>
+  :root { --purple:#3B225B; --gold:#FDD37E; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { height:100%; }
+  body {
+    min-height:100%;
+    background: var(--purple);
+    color: #fff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    display:flex; align-items:center; justify-content:center;
+    padding: 28px 20px;
+    text-align:center;
+    overflow-x:hidden;
+  }
+  main { width:100%; max-width:980px; display:flex; flex-direction:column; align-items:center; }
+  .top { width:100%; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:start; gap:6px; }
+  .top .pose { width:clamp(70px,21vw,min(230px,31vh)); height:auto; display:block; }
+  .top .pose.left { justify-self:start; }
+  .top .pose.right { justify-self:end; }
+  .logo { width:auto; max-width:min(42vw, 360px); max-height:27vh; height:auto; display:block; }
+  .rule { width:64px; height:4px; background:var(--gold); border-radius:4px; margin:clamp(16px,3vh,30px) 0 clamp(12px,2.5vh,22px); }
+
+  h1 {
+    color: var(--gold);
+    font-size: clamp(2.2rem, 9vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: .14em;
+    line-height:1.05;
+  }
+  .insha { margin-top:10px; font-size:1.05rem; letter-spacing:.06em; opacity:.85; }
+
+  .urdu { margin-top:18px; font-size:1.2rem; line-height:1.9; max-width:30ch; direction: rtl; text-wrap: balance; }
+  .tagline {
+    margin-top:22px;
+    font-size:.95rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+    color: var(--gold);
+    border-top:1px solid rgba(253,211,126,.45);
+    padding-top:16px;
+  }
+  .links { margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+  .links a {
+    color: var(--purple); background: var(--gold);
+    font-weight:700; font-size:.95rem; text-decoration:none;
+    padding:12px 22px; border-radius:50px; min-height:44px;
+    display:inline-flex; align-items:center;
+  }
+  .links a:hover, .links a:focus-visible { outline:3px solid #fff; outline-offset:2px; }
+
+
+  @media (max-width: 599px) {
+    /* phone: character on top, logo centred below */
+    .top { grid-template-columns:1fr; justify-items:center; gap:4px; }
+    .top .pose.right { display:none; }
+    .top .pose.left { justify-self:center; width:min(52vw,210px); order:1; }
+    .logo { order:2; width:min(72vw,300px); max-width:none; max-height:none; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- مرکزی تصویر -->
-        <img src="main.jpg" alt="Taco Tang's Store" class="logo">
-
-        <h1>WE ARE COMING SOON insha'Allah!</h1>
-        <p>مزیدار اور تازہ ترین ذائقے بہت جلد آپ کی خدمت میں پیش کیے جا رہے ہیں۔</p>
-        
-        <div class="badge">Tangy Twist in Every Bite!</div>
-    </div>
+<main>
+  <div class="top">
+    <img class="pose left" src="TT_Pose_11_1_WORKING-SOURCE-LOWRES.png" alt="TT Star character welcoming you" width="378" height="414">
+    <img class="logo" src="logo_vertical_dark.png" alt="Taco Tang's logo" width="909" height="823">
+    <img class="pose right" src="TT_Pose_09_WORKING-SOURCE-LOWRES.png" alt="TT Star character announcing with a megaphone" width="383" height="405">
+  </div>
+  <div class="rule"></div>
+      <h1>COMING SOON</h1>
+      <p class="insha">insha'Allah</p>
+  <p class="urdu">مزیدار ذائقے بہت جلد آپ کی خدمت میں پیش کیے جا رہے ہیں۔</p>
+  <p class="tagline">Tangy Twist In Every Bite</p>
+  <nav class="links" aria-label="Social links">
+    <a href="https://www.instagram.com/tacotangs/" target="_blank" rel="noopener">Instagram @tacotangs</a>
+    <a href="https://www.facebook.com/share/19MQFPeSfC/" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.tiktok.com/@tacotangs" target="_blank" rel="noopener">TikTok</a>
+  </nav>
+</main>
 </body>
 </html>
